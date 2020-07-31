@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  height: 100%;
   font-size: 62.5%; /* 1rem = 10px */
 }
 
@@ -10,23 +11,33 @@ html {
 }
 
 body {
+  height: 100%;
   font-size: 1.6rem;
   line-height: 2;
+  background: #e570e7;
+  background: -moz-linear-gradient(top, #e570e7 0%, #c85ec7 50%, #a849a3 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #e570e7 0%,
+    #c85ec7 50%,
+    #a849a3 100%
+  );
+  background: linear-gradient(to bottom, #e570e7 0%, #c85ec7 50%, #a849a3 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e570e7', endColorstr='#a849a3',GradientType=0 );
+  background-attachment: fixed; /*Esta propiedad tiene que ir al final, sino no afecta a la gradiente*/
+  font-family: Arial, Helvetica, sans-serif;
+  color: #ffffff;
 }
 
 /* GLOBALES */
-h1,
-h2,
-h3,
-h4 {
-}
-
 h1 {
   font-size: 4.8rem;
 }
 
 h2 {
   font-size: 4rem;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 h3 {
@@ -43,9 +54,92 @@ img {
 
 .container {
   margin: 0 auto;
+  width: 95%;
   max-width: 1200px;
 }
 
 .txt-center {
   text-align: center;
+}
+
+/** HEADER **/
+header {
+  padding: 4rem 0rem;
+  text-align: center;
+}
+
+/** LISTA DE PRODUCTOS **/
+.list-products {
+  padding: 0rem;
+}
+
+.list-products {
+  list-style: none;
+}
+
+.list-products li {
+  float: left;
+  width: 50%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.list-products li:nth-child(2n + 1) {
+  clear: both;
+}
+
+@media (min-width: 768px) {
+  .list-products li {
+    width: 33.3%;
+  }
+
+  .list-products li:nth-child(2n + 1) {
+    clear: unset;
+  }
+
+  .list-products li:nth-child(3n + 1) {
+    clear: both;
+  }
+}
+
+@media (max-width: 480px) {
+  .list-products li {
+    width: 100%;
+  }
+}
+
+.list-products img {
+  border: 1rem solid rgba(128, 1, 195, 0.45);
+  transition: border 0.3s ease;
+}
+
+.list-products img:hover {
+  border: 1rem solid rgba(128, 1, 195, 1);
+}
+
+.list-products li p {
+  margin: 0rem;
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+.list-products li p span {
+  font-size: 4rem;
+  color: #ffce00;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: #ffce00;
+  color: #8001c8;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ebbe00;
 }
